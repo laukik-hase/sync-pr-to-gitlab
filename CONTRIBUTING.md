@@ -13,6 +13,9 @@ We welcome contributions! To contribute to this repository, please read these in
 
 - **Automatic `requirements.txt`:** Changes to dependencies are automatically reflected in the `requirements.txt` file, derived from `pyproject.toml`. Direct modifications should be avoided; instead, update `pyproject.toml`.
 
+- **Automatic `requirements.txt`:** Changes to dependencies are automatically reflected in the `requirements.txt` file, derived from `pyproject.toml`. Direct modifications to `requirements.txt` should be avoided; instead, update `pyproject.toml`. The auto-generated `requirements.txt` is used for creating a Docker image, ensuring that dependency changes are locked into your containerized environment.
+
+
 - **Commit Standard:** Adherence to the Espressif standard for Conventional Commits ensures consistency in commit messages. Tools like pre-commit hooks and the integrated PR linter DangerJS assist in formatting commit messages appropriately, a key factor for `commitizen` to auto-generate the changelog.
 
 ## Code and Testing
