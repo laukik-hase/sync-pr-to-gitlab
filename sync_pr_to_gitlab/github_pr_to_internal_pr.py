@@ -170,9 +170,10 @@ def main():
         print('Not running in GitHub action context, nothing to do')
         return
 
-    if not os.environ['GITHUB_REPOSITORY'].startswith('espressif/'):
-        print('Not an Espressif repo!')
-        return
+    # TODO: Commented out for testing
+    # if not os.environ['GITHUB_REPOSITORY'].startswith('espressif/'):
+    #     print('Not an Espressif repo!')
+    #     return
 
     # The path of the file with the complete webhook event payload. For example, /github/workflow/event.json.
     with open(os.environ['GITHUB_EVENT_PATH'], 'r', encoding='utf-8') as file:
@@ -187,7 +188,8 @@ def main():
     # Checks whether the approve labeller and workflow initiator are the same
     pr_commit_id = pr_check_approver(pr_creator, pr_comments_url, pr_approve_labeller)
 
-    repo_fullname = event['repository']['full_name']
+    # repo_fullname = event['repository']['full_name']  # TODO: Commented out for testing
+    repo_fullname = 'app_frameworks/actions_internal_test'
 
     pr_num = event['pull_request']['number']
     pr_head_branch = 'contrib/github_pr_' + str(pr_num)
